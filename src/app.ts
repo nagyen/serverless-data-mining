@@ -16,13 +16,13 @@ export class ParseResume {
 
     }
 
-    public async getLines(url: string) {
+    public async getLines(bucket: string, key: string) {
         const params: Textract.DetectDocumentTextRequest = {
             Document: { /* required */
                 // Bytes: new Buffer('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */,
                 S3Object: {
-                    Bucket: 'datis-content-dev',
-                    Name: 'e3Applicants/hostahi/resume-2.png',
+                    Bucket: bucket,
+                    Name: key,
                 },
             },
         };
